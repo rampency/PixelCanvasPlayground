@@ -50,8 +50,7 @@ export class AppComponent implements OnInit {
       this.canvas.nativeElement.width,
       this.canvas.nativeElement.height
     );
-    this.applyBrightness(imageData.data, this.brightnessValue);
-
+    this.applyChanges(imageData);
     this.context.putImageData(imageData, 0, 0);
   }
 
@@ -66,10 +65,7 @@ export class AppComponent implements OnInit {
       this.canvas.nativeElement.width,
       this.canvas.nativeElement.height
     );
-    this.applyRedShift(imageData.data, this.redValue);
-    this.applyBlueShift(imageData.data, this.blueValue);
-    this.applyGreenShift(imageData.data, this.greenValue);
-
+    this.applyChanges(imageData);
     this.context.putImageData(imageData, 0, 0);
   }
 
@@ -84,9 +80,7 @@ export class AppComponent implements OnInit {
       this.canvas.nativeElement.width,
       this.canvas.nativeElement.height
     );
-    this.applyRedShift(imageData.data, this.redValue);
-    this.applyBlueShift(imageData.data, this.blueValue);
-    this.applyGreenShift(imageData.data, this.greenValue);
+    this.applyChanges(imageData);
     this.context.putImageData(imageData, 0, 0);
   }
 
@@ -101,9 +95,7 @@ export class AppComponent implements OnInit {
       this.canvas.nativeElement.width,
       this.canvas.nativeElement.height
     );
-    this.applyRedShift(imageData.data, this.redValue);
-    this.applyBlueShift(imageData.data, this.blueValue);
-    this.applyGreenShift(imageData.data, this.greenValue);
+    this.applyChanges(imageData);
     this.context.putImageData(imageData, 0, 0);
   }
 
@@ -119,6 +111,13 @@ export class AppComponent implements OnInit {
 
   redrawImage() {
     this.drawImage(this.image);
+  }
+
+  applyChanges(imageData) {
+    this.applyBrightness(imageData.data, this.brightnessValue);
+    this.applyRedShift(imageData.data, this.redValue);
+    this.applyBlueShift(imageData.data, this.blueValue);
+    this.applyGreenShift(imageData.data, this.greenValue);
   }
 
   applyBrightness(data, brightness) {
