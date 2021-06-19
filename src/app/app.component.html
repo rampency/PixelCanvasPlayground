@@ -1,0 +1,61 @@
+<div class="container">
+  <canvas #canvas class="Canvas"></canvas>
+</div>
+<div class="grid-container">
+  <div class="grid-item">
+    <br />
+    <label> Brightness ({{brightnessValue}}) </label>
+    <br />
+    <input
+      id="BrightnessSlider"
+      [(ngModel)]="brightnessValue"
+      type="range"
+      value="0"
+      min="-100"
+      max="100"
+      (change)="brightnessSliderChange($event)"
+    />
+  </div>
+  <div class="grid-item">
+    <br />
+    <label> R ({{redValue}}) </label>
+    <br />
+    <input
+      type="range"
+      [(ngModel)]="redValue"
+      (change)="redSliderChange($event)"
+      id="ContrastSlider"
+      value="0"
+      min="-100"
+      max="100"
+    />
+  </div>
+  <div class="grid-item">
+    <br />
+    <label> G ({{greenValue}}) </label>
+    <br />
+    <input
+      type="range"
+      [(ngModel)]="greenValue"
+      (change)="greenSliderChange($event)"
+      id="ContrastSlider"
+      value="0"
+      min="-100"
+      max="100"
+    />
+  </div>
+  <div class="grid-item">
+    <br />
+    <label> B ({{blueValue}}) </label>
+    <br />
+    <input
+      type="range"
+      [(ngModel)]="blueValue"
+      (change)="blueSliderChange($event)"
+      id="ContrastSlider"
+      value="0"
+      min="-100"
+      max="100"
+    />
+  </div>
+</div>
